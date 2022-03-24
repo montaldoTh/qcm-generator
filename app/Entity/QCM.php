@@ -85,4 +85,12 @@ class QCM
 
         return $this;
     }
+
+    /**
+     * Get the value of title
+     */ 
+    public function getTitle()
+    {
+        return $this->title;
+    }
 }

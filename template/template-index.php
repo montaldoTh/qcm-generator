@@ -10,13 +10,18 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($qcms as $qcm): ?>
+            <?php foreach($qcmRes as $qcm): ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $qcm->getId() ?></td>
+                <td><?= $qcm->getTitle() ?></td>
+                <td>
+                    <a href="">Modifier</a>
+                    <a href="">Supprimer</a>
+                </td>
             </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 <?php require '../template/partiels/inc-bot.php'; ?>
     
