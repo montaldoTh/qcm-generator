@@ -1,6 +1,7 @@
 <?php require '../template/partiels/inc-top.php'; ?>
 <div class='container'>
     <h1>Mes QCMs</h1>
+    <a href="new-qcm.php">Nouveau</a>
     <table border="1">
         <thead>
             <tr>
