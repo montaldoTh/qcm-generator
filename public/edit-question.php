@@ -17,8 +17,6 @@ if(isset($_GET['id']))
     
     if(isset($_POST['title'])){
         $questionManager->update($_POST['title'], intval($_GET['id']));
-    }else{
-        $questionManager->update($question->getTitle(), intval($_GET['id']));
     }
     require '../template/template-editQ.php';
 }
