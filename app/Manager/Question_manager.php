@@ -27,6 +27,37 @@ Class QuestionManager{
         }
         return $result;
     }
+
+    public function get(int $id) : Question
+    {
+        $sql = "SELECT * FROM question WHERE id = :id";
+        $req = $this->pdo->prepare($sql);
+        $req->execute([
+            'id' => $id
+        ]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        
+        $question = (new Question())
+            ->setId($result['id'])
+            ->setTitle($result['title'])
+            ->setIdQcm($result['id_qcm']);
+
+        return $question;
+    }
+
+    public function update(string $title, int $id){
+        $sql = "UPDATE question SET title = :title WHERE id = :id";
+        $req = $this->pdo->prepare($sql);
+        $req->execute([
+            'title' => $title,
+            'id' => $id,
+        ]);
+    }
+
+
+
+
+
     public function insert(string $title, int $id_qcm){
         $sql = 'INSERT INTO question (title, id_qcm) VALUES (:title, :id_qcm)';
         $req = $this->pdo->prepare($sql);
