@@ -15,8 +15,12 @@ if(isset($_GET['id']))
     $qcmManager = new QcmManager();
     $qcms = $qcmManager->getAll();
     
-    if(isset($_POST['title'])){
-        $questionManager->update($_POST['title'], intval($_GET['id']));
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['title'])){
+            $questionManager->update($_POST['title'], intval($_GET['id']));
+        }else{
+            $message='Veuillez remplir le champs';
+        }
     }
     require '../template/template-editQ.php';
 }
