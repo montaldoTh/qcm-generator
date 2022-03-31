@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
         $manager = new QcmManager();
         $qcmId = $manager->insert($_POST['title']);
         if($qcmId){
-            header('location: /'); die;
+            header("location: new-questions.php?id_qcm=$qcmId"); die;
         }else{
             $message="Une erreur s'est produite lors de l'enregistrement";
         }

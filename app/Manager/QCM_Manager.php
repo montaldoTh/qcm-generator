@@ -21,7 +21,7 @@ Class QcmManager{
         foreach ($qcms as $qcm){
             $obj= new QCM();
             $obj->setId($qcm['id']);
-            $obj->setTitle($qcm['Title']);
+            $obj->setTitle($qcm['title']);
             $result[]= $obj;
         }
         return $result;

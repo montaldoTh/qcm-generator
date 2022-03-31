@@ -1,8 +1,8 @@
 <?php require '../template/partiels/inc-top.php'; ?>
 <div class='container'>
-    <h1>Mes QCMs</h1>
-    <a href="new-qcm.php">Nouveau</a>
-    <a href="index-question.php">Questions</a>
+    <h1>Mes Questions</h1>
+    <a href="new-question.php">Nouveau</a>
+    <a href="/">QCM</a>
     <table border="1">
         <thead>
             <tr>
@@ -12,10 +12,10 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($qcmRes as $qcm): ?>
+            <?php foreach($qRes as $question): ?>
             <tr>
-                <td><?= $qcm->getId() ?></td>
-                <td><?= $qcm->getTitle() ?></td>
+                <td><?= $question->getId() ?></td>
+                <td><?= $question->getTitle() ?></td>
                 <td>
                     <a href="">Modifier</a>
                     <a href="">Supprimer</a>
