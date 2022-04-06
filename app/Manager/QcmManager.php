@@ -52,4 +52,13 @@ class QcmManager extends Manager
         return $req->execute(compact('id','title'));
     }
 
+    public function delete(int $id)
+    {
+        $sql = "DELETE FROM qcm WHERE id = :id";
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'id' => $id
+        ]);
+    }
+
 }

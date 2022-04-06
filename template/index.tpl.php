@@ -18,7 +18,10 @@
                 <td><?= $qcm->getTitle() ?></td>
                 <td>
                     <a href="/edit-qcm.php?id=<?= $qcm->getId()?>">Modifier</a>
-                    <a href="">Supprimer</a>
+                    <form action="/delete-qcm.php" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ?')">
+                        <input type="hidden" name="id" value="<?= $qcm->getId() ?>" />
+                        <input type="submit" name="submit" value="Supprimer" />
+                    </form>
                 </td>
             </tr>
             <?php endforeach; ?>
