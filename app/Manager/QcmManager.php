@@ -21,6 +21,19 @@ class QcmManager extends Manager
         return $result;
     }
 
+    public function get($id)
+    {
+        $sql = 'SELECT * FROM qcm WHERE id = :id';
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'id' => $id
+        ]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        $qcm = (new QCM())->hydrate($result);
+
+        return $qcm;
+    }
+
     public function insert(string $title) : int
     {
         $sql = "INSERT INTO qcm (title) VALUES (:title)";
@@ -30,6 +43,13 @@ class QcmManager extends Manager
         ]);
 
         return $this->getPdo()->lastInsertId();
+    }
+
+    public function update(int $id, string $title)
+    {
+        $sql = "UPDATE qcm SET title = :title WHERE id = :id";
+        $req = $this->getPdo()->prepare($sql);
+        return $req->execute(compact('id','title'));
     }
 
 }

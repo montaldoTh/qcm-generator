@@ -9,7 +9,7 @@ abstract class Manager
         if(self::$pdo == NULL){
             try
             {
-                self::$pdo = new PDO('mysql:host=localhost;dbname=my_qcm_generator','root');
+                self::$pdo = new PDO('mysql:host=localhost;dbname=myqcm','root');
             }
             catch(PDOException $e)
             {
