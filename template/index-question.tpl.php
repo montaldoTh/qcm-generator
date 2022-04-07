@@ -3,6 +3,7 @@
     <h1>Mes questions</h1>
 
     <a href="/new-question.php">Nouveau</a>
+    <a href="/index-answer.php">Réponses</a>
     <table border="1">
         <thead>
             <tr>

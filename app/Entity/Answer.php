@@ -1,58 +1,76 @@
 <?php
 
-class Answer
+require_once '../app/Entity/Entity.php';
+
+class Answer extends Entity
 {
 
-    private string $text;
+    private string $texte;
 
-    private bool $isTheGoodAnswer;
+    private int $is_good;
 
-    public function __construct(string $text, bool $isTheGoodAnswer = false)
+    private int $id;
+
+    private int $id_qcm;
+
+    private int $id_question;
+
+    public function getTexte()
     {
-        $this->setText($text)->setIsTheGoodAnswer($isTheGoodAnswer);
+        return $this->texte;
     }
 
-    // TODO : ajouter les propriétés
-
-    // TODO : ajouter les méthodes
-
-
-    /**
-     * Get the value of text
-     */ 
-    public function getText()
+    public function setTexte($texte)
     {
-        return $this->text;
-    }
-
-    /**
-     * Set the value of text
-     *
-     * @return  self
-     */ 
-    public function setText($text)
-    {
-        $this->text = $text;
+        $this->texte = $texte;
 
         return $this;
     }
 
-    /**
-     * Get the value of isTheGoodAnswer
-     */ 
-    public function getIsTheGoodAnswer()
+    public function getIsGood()
     {
-        return $this->isTheGoodAnswer;
+        return $this->is_good;
     }
 
-    /**
-     * Set the value of isTheGoodAnswer
-     *
-     * @return  self
-     */ 
-    public function setIsTheGoodAnswer($isTheGoodAnswer)
+    public function setIsGood($is_good)
     {
-        $this->isTheGoodAnswer = $isTheGoodAnswer;
+        $this->is_good = $is_good;
+
+        return $this;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function getIdQcm()
+    {
+        return $this->id_qcm;
+    }
+
+    public function setIdQcm($id_qcm)
+    {
+        $this->id_qcm = $id_qcm;
+
+        return $this;
+    }
+ 
+    public function getIdQuestion()
+    {
+        return $this->id_question;
+    }
+
+    public function setIdQuestion($id_question)
+    {
+        $this->id_question = $id_question;
 
         return $this;
     }

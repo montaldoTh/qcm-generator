@@ -3,6 +3,7 @@
     <h1>Mes QCMs</h1>
 
     <a href="/new-qcm.php">Nouveau</a>
+    <a href="/index-question.php">Question</a>
     <table border="1">
         <thead>
             <tr>
